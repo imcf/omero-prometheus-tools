@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+"""Sessions-related metrics."""
 
 import collections
 import omero.clients
