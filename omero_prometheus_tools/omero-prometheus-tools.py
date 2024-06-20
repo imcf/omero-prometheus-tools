@@ -23,8 +23,7 @@ def connect(hostname, username, password):
     client.createSession(username, password)
     return client
 
-
-if __name__ == '__main__':
+def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config', action='append',
                         help='Query configuration files')
@@ -37,7 +36,11 @@ if __name__ == '__main__':
                         help='Interval (seconds) between updates, default 60')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='Print verbose output')
-    args = parser.parse_args()
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    args = parse_args()
 
     g_last_login = Gauge('omero_prometheus_tools_agent_login_time',
                          'Time of last Prometheus agent login')
