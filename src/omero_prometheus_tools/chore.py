@@ -1,8 +1,12 @@
 """Generate, update and serve metrics on OMERO."""
 
-from prometheus_client import Gauge, start_http_server
 from time import sleep, time
-from omero_prometheus_tools import CountMetrics, SessionMetrics
+
+import omero
+from prometheus_client import Gauge, start_http_server
+
+from .counts import CountMetrics
+from .sessions import SessionMetrics
 
 
 def connect(hostname, username, password):
