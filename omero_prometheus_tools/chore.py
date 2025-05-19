@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import argparse
 import omero.clients
 
 from prometheus_client import Gauge, start_http_server
@@ -14,20 +13,6 @@ def connect(hostname, username, password):
     client.createSession(username, password)
     return client
 
-def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--config', action='append',
-                        help='Query configuration files')
-    parser.add_argument('-s', '--host', default='localhost')
-    parser.add_argument('-u', '--user', default='guest')
-    parser.add_argument('-w', '--password', default='guest')
-    parser.add_argument('-l', '--listen', type=int, default=9449,
-                        help='Serve metrics on this port')
-    parser.add_argument('-i', '--interval', type=int, default=60,
-                        help='Interval (seconds) between updates, default 60')
-    parser.add_argument('-v', '--verbose', action='store_true',
-                        help='Print verbose output')
-    return parser.parse_args()
 
 def update_metrics(args, g_conn_fail, g_last_login):
     client = connect(args.host, args.user, args.password)
@@ -53,9 +38,7 @@ def update_metrics(args, g_conn_fail, g_last_login):
         client.closeSession()
 
 
-if __name__ == '__main__':
-    args = parse_args()
-
+def serve_metrics(args):
     # Start up the server to expose the metrics.
     start_http_server(args.listen)
 
