@@ -5,10 +5,7 @@ import omero.clients
 import omero.cmd
 from omero.rtypes import unwrap
 
-from prometheus_client import (
-    Gauge,
-    Summary,
-)
+from prometheus_client import Gauge, Summary
 
 
 def connect(hostname, username, password):

@@ -3,18 +3,9 @@
 import argparse
 import omero.clients
 
-from prometheus_client import (
-    Gauge,
-    start_http_server,
-)
-from time import (
-    sleep,
-    time,
-)
-from omero_prometheus_tools import (
-    CountMetrics,
-    SessionMetrics,
-)
+from prometheus_client import Gauge, start_http_server
+from time import sleep, time
+from omero_prometheus_tools import CountMetrics, SessionMetrics
 
 
 def connect(hostname, username, password):
