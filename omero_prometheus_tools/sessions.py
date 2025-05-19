@@ -29,8 +29,7 @@ class SessionMetrics(object):
 
         cb = None
         try:
-            cb = self.client.submit(
-                omero.cmd.CurrentSessionsRequest(), 60, 500)
+            cb = self.client.submit(omero.cmd.CurrentSessionsRequest(), 60, 500)
             rsp = cb.loop(60, 500)
             counts = collections.Counter(c.userName for c in rsp.contexts)
             missing = self.lastusers.difference(counts.keys())

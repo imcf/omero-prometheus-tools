@@ -1,10 +1,8 @@
 """Count-type metrics."""
 
 import yaml
-
 from omero.rtypes import unwrap
 from prometheus_client import Gauge, Summary
-
 
 SESSION_REQUEST_TIME = Summary(
     "omero_counts_processing_seconds", "Time spent counting sessions"

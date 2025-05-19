@@ -49,11 +49,9 @@ def serve_metrics(args):
         "Gauge indicating if connecting to OMERO failed.",
     )
 
-
     while True:
         try:
             update_metrics(args, g_conn_fail, g_last_login)
         except:  # noqa: E722  pylint: disable-msg=W0702
             g_conn_fail.set(1)
             sleep(60)
-
