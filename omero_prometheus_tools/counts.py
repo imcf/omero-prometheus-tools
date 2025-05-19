@@ -6,13 +6,6 @@ from omero.rtypes import unwrap
 from prometheus_client import Gauge, Summary
 
 
-def connect(hostname, username, password):
-    client = omero.client(hostname)
-    client.setAgent('prometheus-omero-counts')
-    client.createSession(username, password)
-    return client
-
-
 SESSION_REQUEST_TIME = Summary(
     "omero_counts_processing_seconds", "Time spent counting sessions"
 )
