@@ -19,7 +19,7 @@ from omero_prometheus_tools import (
 
 def connect(hostname, username, password):
     client = omero.client(hostname)
-    client.setAgent('prometheus-omero-tools')
+    client.setAgent("prometheus-omero-tools")
     client.createSession(username, password)
     return client
 
@@ -68,9 +68,11 @@ if __name__ == '__main__':
     # Start up the server to expose the metrics.
     start_http_server(args.listen)
 
-    g_last_login = Gauge('omero_prometheus_tools_agent_login_time',
-                         'Time of last Prometheus agent login')
-    g_connfail = Gauge(
+    g_last_login = Gauge(
+        "omero_prometheus_tools_agent_login_time",
+        "Time of last Prometheus agent login",
+    )
+    g_conn_fail = Gauge(
         "omero_prometheus_tools_connection_failed",
         "Gauge indicating if connecting to OMERO failed.",
     )
