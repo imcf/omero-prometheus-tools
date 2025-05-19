@@ -1,4 +1,4 @@
-"""Sessions-related metrics."""
+"""OMERO Session Metrics."""
 
 import collections
 import omero.cmd

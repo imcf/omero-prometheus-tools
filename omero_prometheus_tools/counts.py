@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+"""Count-type metrics."""
 
 import yaml
 

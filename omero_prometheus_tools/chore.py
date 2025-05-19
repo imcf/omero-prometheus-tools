@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+"""Generate, update and serve metrics on OMERO."""
 
 from prometheus_client import Gauge, start_http_server
 from time import sleep, time

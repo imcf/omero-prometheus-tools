@@ -1,3 +1,5 @@
+"""Functions related to the CLI interface."""
+
 import argparse
 
 from .chore import serve_metrics
