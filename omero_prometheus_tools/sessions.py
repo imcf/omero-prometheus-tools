@@ -1,7 +1,6 @@
 """Sessions-related metrics."""
 
 import collections
-import omero.clients
 import omero.cmd
 from omero.rtypes import unwrap
 

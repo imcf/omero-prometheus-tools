@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 
-import omero.clients
-from omero.rtypes import unwrap
-
-from prometheus_client import (
-    Gauge,
-    Summary,
-)
 import yaml
+
+from omero.rtypes import unwrap
+from prometheus_client import Gauge, Summary
 
 
 def connect(hostname, username, password):

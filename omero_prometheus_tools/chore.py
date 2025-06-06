@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import omero.clients
-
 from prometheus_client import Gauge, start_http_server
 from time import sleep, time
 from omero_prometheus_tools import CountMetrics, SessionMetrics
