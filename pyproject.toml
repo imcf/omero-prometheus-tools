@@ -23,6 +23,9 @@ omero-prometheus-tools = "omero_prometheus_tools.cli:main_entry_point"
 [tool.uv]
 package = true
 
+[tool.uv.build-backend]
+data = { "data" = "extra-files" }
+
 [tool.uv.sources]
 zeroc-ice = [
   { marker = "python_full_version == '3.8.*' and sys_platform == 'linux'", url = "https://github.com/glencoesoftware/zeroc-ice-py-linux-x86_64/releases/download/20240202/zeroc_ice-3.6.5-cp38-cp38-manylinux_2_28_x86_64.whl" },
