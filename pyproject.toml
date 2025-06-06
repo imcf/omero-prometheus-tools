@@ -38,3 +38,11 @@ zeroc-ice = [
 [build-system]
 requires = ["uv_build>=0.7.11,<0.8.0"]
 build-backend = "uv_build"
+
+[tool.bumpversion]
+parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)(\\.(?P<release>\\w+))?"
+current_version = "0.2.4.dev0"
+commit = true
+tag = true
+sign_tags = true
+serialize = ["{major}.{minor}.{patch}.{release}", "{major}.{minor}.{patch}"]
